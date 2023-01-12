@@ -1,5 +1,12 @@
 {
   "devDependencies": {
-    "cypress": "^12.3.0"
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "chai": "^4.3.7",
+    "cypress": "^12.3.0",
+    "esbuild": "^0.16.16"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.0",
+    "@cypress/browserify-preprocessor": "latest"
   }
 }
