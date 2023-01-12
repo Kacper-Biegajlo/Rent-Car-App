@@ -1,0 +1,47 @@
+Test Scenario: Rent a car app functionalities work properly
+
+Test Case 1: Check if user is able to find desired search results with valid data inputed.
+1. Got to Rent a carr app website
+2. Enter valid data:
+- specific country/city 
+- specific car model 
+- valid date range 
+3. Click Search button
+
+Expected result:
+Proper search results are returned
+
+Actual result:
+Invalid search results are returned. Search returned all car models instead of cpecific one.
+
+
+
+Test Case 2: Check if search funcionality will work with invalid data inputed.
+1. Got to Rent a carr app website
+2. Enter invalid data/enter no data:
+- different country and city
+- car model not in data base
+- invalid date range
+3. Click Search button
+
+Expected result:
+Country and city drop down lists will work dependebliy.
+Customer will be promted about invalid data.
+Search results won't be returned.
+
+Actual result:
+Search results show despite the invalid data:
+    - past dates/ car model not in data base/ invalid City and Country combination
+Country was not changed to Germany after selecting Berlin.
+Search results are not shown without any dates inputed and user is promtpted correctly.
+Search results are not shown  with pickup date higher than drop off date and user is promtpted correctly.
+
+
+Test Case 3: Check if car details are properly displayed after clicking rent on a car then
+    confirm personal data rent form work correctly.
+1. Got to Rent a carr app website
+2. Enter valid data:
+3. Click Rent button on car in search results
+4. Click Rent! button on offer details page
+5. Fill out personal data rent form
+6. Submit the form
