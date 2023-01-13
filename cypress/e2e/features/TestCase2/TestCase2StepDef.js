@@ -1,54 +1,54 @@
 import { Given, When, Then, } from "@badeball/cypress-cucumber-preprocessor"
-import HomePage from "../../../fixtures/PageObjects/HomePage"
+import SearchPage from "../../../fixtures/PageObjects/SearchPage"
 
 Given("I open Rent a car app page", () => {
     cy.visit(Cypress.env("url"))
 });
 When("I enter invalid data", () => {
-    HomePage.getCountryDropdown().select("France")
-    cy.get('#city').select("Berlin")
-    cy.get('#model').type("Polonez")
-    cy.get('#pickup').type("2021-01-27")
-    cy.get('#dropoff').type("2021-01-29")
+    SearchPage.CountryDropdown().select("France")
+    SearchPage.CityDropdown().select("Berlin")
+    SearchPage.ModelForm().type("Polonez")
+    SearchPage.PickupDateForm().type("2021-01-27")
+    SearchPage.DropoffDateForm().type("2021-01-29")
         
 })
 When("I enter invalid data where pickup date is before pickup date", () => {
-    HomePage.getCountryDropdown().select("France")
-    cy.get('#city').select("Berlin")
-    cy.get('#model').type("Polonez")
-    cy.get('#pickup').type("2021-01-29")
+    SearchPage.CountryDropdown().select("France")
+    SearchPage.CityDropdown().select("Berlin")
+    SearchPage.ModelForm().type("Polonez")
+    SearchPage.PickupDateForm().type("2021-01-29")
     cy.get('#dropoff').type("2021-01-27")
         
 })
 When("I enter no data", () => {
-    HomePage.getCountryDropdown()
-    cy.get('#city')
-    cy.get('#model')
-    cy.get('#pickup')
-    cy.get('#dropoff')
+    SearchPage.CountryDropdown()
+    SearchPage.CityDropdown()
+    SearchPage.ModelForm()
+    SearchPage.PickupDateForm()
+    SearchPage.DropoffDateForm()
         
 })
 When("I click Search button", () => {
-    cy.get('.btn').click()
+    SearchPage.SearchSubmitBttn().click()
 })
 Then("User will be promted about invalid date inputs - past dates", () => {
-    cy.get('.alert').should("be.visible").should('have.text', 'Please enter a valid date!')
-    cy.get('#search-results').should('not.exist')
+    SearchPage.Alert().should("be.visible").should('have.text', 'Please enter a valid date!')
+    SearchPage.SearchResultTable().should('not.exist')
 })
 Then("Country drop down list will automatically change to proper one according to city choice", () => {
-    cy.get('#country').find(":selected").should("have.text", "Germany")
+    SearchPage.CountryDropdown().find(":selected").should("have.text", "Germany")
 })
 Then("App wont return search results", () => {
-    cy.get('#search-results').should('not.exist')
-    cy.get('.alert').should("be.visible")
+    SearchPage.SearchResultTable().should('not.exist')
+    SearchPage.Alert().should("be.visible")
 })
 Then("User will be promted about invalid inputs and app wont return search results", () => {
-    cy.get('#search-results').should('not.exist')
-    cy.get('.alert').should("be.visible").should('have.text', 'Please fill pickup and drop off dates')
+    SearchPage.SearchResultTable().should('not.exist')
+    SearchPage.Alert().should("be.visible").should('have.text', 'Please fill pickup and drop off dates')
 })
 Then("User will be promted about invalid dates and app wont return search results", () => {
-    cy.get('.alert').should("be.visible").should('have.text', 'Please enter a valid date!')
-    cy.get('#search-results').should('not.exist')
+    SearchPage.Alert().should("be.visible").should('have.text', 'Please enter a valid date!')
+    SearchPage.SearchResultTable().should('not.exist')
 })
 
 
