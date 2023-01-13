@@ -21,6 +21,5 @@ module.exports = defineConfig({
       url: 'http://qalab.pl.tivixlabs.com/'
     },
     defaultCommandTimeout: 500,
-    projectId: "sc5syq",
   },
 });
