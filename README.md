@@ -31,10 +31,10 @@ Test Case 1: Check if a user can find desired search results with valid data inp
 3. Click the Search button
 
 Expected result:
-Proper search results are returned
+- Proper search results are returned
 
 Actual result:
-Invalid search results are returned. Search returned all car models instead of the cpecific one.
+- Invalid search results are returned. Search returned all car models instead of the cpecific one.
 
   Code: [Click!](cypress/e2e/features/TestCase1/TestCase1StepDef.js)
   
@@ -52,22 +52,22 @@ Invalid search results are returned. Search returned all car models instead of t
 Test Case 2: Check if the search functionality will work with invalid data input.
 1. Got to Rent a car app website
 2. Enter invalid data/enter no data:
-- different country and city
-- car model not in the database
-- invalid date range
+   - different country and city
+   - car model not in the database
+   - invalid date range
 3. Click the Search button
 
 Expected result:
-Country and city drop-down lists will work properly.
-Customers will be prompted about invalid data.
-Search results won't be returned.
+- Country and city drop-down lists will work properly.
+- Customers will be prompted about invalid data.
+- Search results won't be returned.
 
 Actual result:
-Search results show despite the invalid data:
-    - past dates/ car model not in database/ invalid City and Country combination
-The country was not changed to Germany after selecting Berlin.
-Search results are not shown without any dates inputted and the user is prompted correctly.
-Search results are not shown with a pickup date higher than the drop off date and the user is prompted correctly.
+- Search results show despite the invalid data:
+  - Past dates / car model not in database / invalid City and Country combination
+- The country was not changed to Germany after selecting Berlin.
+- Search results are not shown without any dates inputted and the user is prompted correctly.
+- Search results are not shown with a pickup date higher than the drop off date and the user is prompted correctly.
 
   Code: [Click!](cypress/e2e/features/TestCase2/TestCase2StepDef.js)
   
@@ -97,22 +97,22 @@ Test Case 3: Check if car details are properly displayed after clicking rent on 
 6. Submit the form
 
 Expected result:
-Customer will be able to complete renting a car process with valid data and 
+- Customer will be able to complete renting a car process with valid data and 
     be prompted about a success.
-The customer will not be able to complete renting a car process with invalid data and
+- The customer will not be able to complete renting a car process with invalid data and
     will be prompted about issues.
 
 Actual result:
-Customer was able to provide valid data in the rent form and submit it.
-Customer was not notified about the successful operation and the page was redirected to 404.
-Invalid data that was properly blocked and customer was prompted about it:
-- Name and Last Name values too long
-- email without @
-- card number value too long
-- card number containing letters 
-Invalid data that was not properly blocked and the customer was not prompted about it:
-- Name and Last name made out of digits
-- Email address not including domain (invalid@)
+- Customer was able to provide valid data in the rent form and submit it.
+- Customer was not notified about the successful operation and the page was redirected to 404.
+- Invalid data that was properly blocked and customer was prompted about it:
+  - Name and Last Name values too long
+  - email without @
+  - card number value too long
+  - card number containing letters 
+- Invalid data that was not properly blocked and the customer was not prompted about it:
+  - Name and Last name made out of digits
+  - Email address not including domain (invalid@)
 
 Code: [Click!](cypress/e2e/features/TestCase3/TestCase3StepDef.js)
   
