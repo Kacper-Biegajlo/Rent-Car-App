@@ -1,10 +1,10 @@
 # Rent-Car-App
 
-Rent Car App Cypress + BDD + PageObects tests based on 3 Test Cases and few basic funcionality assumptions.
+Rent Car App Cypress + BDD + PageObects tests based on 3 Test Cases and few basic functionality assumptions.
 
 ### Prerequisites
 
-The only requirement for this project is to have [Node.js](https://nodejs.org/en/) installed on your machine.
+The only requirement for this project is to have [Node.js](https://nodejs.org/en/) v16.17.0 or newer installed on your machine.
 
 ### Installation
 
@@ -34,7 +34,7 @@ Expected result:
 - Proper search results are returned
 
 Actual result:
-- Invalid search results are returned. Search returned all car models instead of the cpecific one.
+- Invalid search results are returned. Search returned all car models instead of the specific ones.
 
   Code: [Click!](cypress/e2e/features/TestCase1/TestCase1StepDef.js)
   
@@ -64,10 +64,10 @@ Expected result:
 
 Actual result:
 - Search results show despite the invalid data:
-  - Past dates / car model not in database / invalid City and Country combination
+  - Past dates / car model not in database/invalid City and Country combination
 - The country was not changed to Germany after selecting Berlin.
 - Search results are not shown without any dates inputted and the user is prompted correctly.
-- Search results are not shown with a pickup date higher than the drop off date and the user is prompted correctly.
+- Search results are not shown with a pickup date higher than the drop-off date and the user is prompted correctly.
 
   Code: [Click!](cypress/e2e/features/TestCase2/TestCase2StepDef.js)
   
@@ -108,7 +108,7 @@ Actual result:
 - Invalid data that was properly blocked and customer was prompted about it:
   - Name and Last Name values too long
   - email without @
-  - card number value too long
+  - card number value are too long
   - card number containing letters 
 - Invalid data that was not properly blocked and the customer was not prompted about it:
   - Name and Last name made out of digits
